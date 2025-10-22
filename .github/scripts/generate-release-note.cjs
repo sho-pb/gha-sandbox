@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 (async () => {
-  const GITHUB_TOKEN = process.env.GH_TOKEN;
+  const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   const GITHUB_REPOSITORY = process.env.GITHUB_REPOSITORY;
   const TRIMMED_COMMIT_HASH = process.env.TRIMMED_COMMIT_HASH;
   const LATEST_TAG = process.env.LATEST_TAG;
