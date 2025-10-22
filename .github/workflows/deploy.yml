@@ -58,7 +58,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           TRIMMED_COMMIT_HASH: ${{ env.TRIMMED_COMMIT_HASH }}
           LATEST_TAG: ${{ env.LATEST_TAG }}
-        run: node scripts/generate-release-note.cjs
+        run: node .github/scripts/generate-release-note.cjs
 
       - name: Create Pull Request
         env:
