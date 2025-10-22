@@ -5,6 +5,11 @@
   const TRIMMED_COMMIT_HASH = process.env.TRIMMED_COMMIT_HASH;
   const LATEST_TAG = process.env.LATEST_TAG;
 
+  console.log('GITHUB_TOKEN', GITHUB_TOKEN);
+  console.log('GITHUB_REPOSITORY', GITHUB_REPOSITORY);
+  console.log('TRIMMED_COMMIT_HASH', TRIMMED_COMMIT_HASH);
+  console.log('LATEST_TAG', LATEST_TAG);
+
   if (!GITHUB_TOKEN || !GITHUB_REPOSITORY || !TRIMMED_COMMIT_HASH) {
     process.exit(1);
   }
