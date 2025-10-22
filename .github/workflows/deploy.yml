@@ -1,3 +1,4 @@
+---
 name: Prepare Deploy
 
 on:
@@ -51,9 +52,7 @@ jobs:
             /repos/${{ github.repository }}/releases/generate-notes \
             -f tag_name="$TRIMMED_COMMIT_HASH" \
             -f target_commitish="$TRIMMED_COMMIT_HASH" \
-            > generated_notes.json
-
-          jq -r '.body' generated_notes.json > pr_body_raw.txt
+            --jq '.body' > pr_body_raw.txt
 
           awk '{
             if (match($0, /\* .* in (https:\/\/github\.com\/[^ )]+)/, m)) {
