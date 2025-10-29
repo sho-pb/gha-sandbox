@@ -8,8 +8,8 @@ on:
 jobs:
   job:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'dependencies')
     steps:
       - name: Notify team
         run: |
-          echo "dependencies PR merged! Notify developers to run pnpm install"
+          curl -X POST "${{ secrets.TEAMS_DEPENDENCY_NOTIFICATION_URL }}"
