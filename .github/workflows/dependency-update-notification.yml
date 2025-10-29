@@ -1,0 +1,14 @@
+name: Notify on dependencies merge
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  notify:
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'dependencies')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify team
+        run: |
+          # ここで通知処理を呼び出す（Slack通知やWebhookなど）
+          echo "dependencies PR merged! Notify developers to run pnpm install"
