@@ -2,7 +2,7 @@ name: Notify on dependencies merge
 on:
   pull_request:
     branches:
-      - master
+      - prod
     types: [closed]
 
 jobs:
