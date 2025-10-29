@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Notify team
         run: |
-          echo "dependencies PR merged! Notify developers to run pnpm install"
+          curl -X POST "${{ secrets.TEAMS_DEPENDENCY_NOTIFICATION_URL }}"
