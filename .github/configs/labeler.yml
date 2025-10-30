@@ -1,0 +1,3 @@
+release:
+  - base-branch: ['prod']
+  - head-branch: ['main', '^release']
