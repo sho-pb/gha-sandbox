@@ -8,8 +8,7 @@ on:
 jobs:
   job:
     runs-on: ubuntu-slim
-    if: |
-      github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'type: dependencies')
+    if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, format('type{0} dependencies', ':')) }}
     steps:
       - name: Notify team
         run: |
