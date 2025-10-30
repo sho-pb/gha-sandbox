@@ -1,4 +1,4 @@
-name: Notify on dependencies merge
+name: Notify on dependencies update
 on:
   pull_request:
     branches:
@@ -7,8 +7,9 @@ on:
 
 jobs:
   job:
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'dependencies')
+    runs-on: ubuntu-slim
+    if: |
+      github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'type: dependencies')
     steps:
       - name: Notify team
         run: |
